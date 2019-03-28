@@ -230,9 +230,9 @@ bool CAudio::Load(unsigned id, char *lpzFileName)
 	string file_type(&lpzFileName[strlen(lpzFileName)-4]);
 	for (unsigned i = 0; i < file_type.size(); i++)
 		file_type[i] = toupper(file_type[i]);
-	if (file_type.compare(".MID") != 0 /*&&
-		file_type.compare(".WAV") != 0 &&
-		file_type.compare(".MP3") != 0*/) {
+	if (/*file_type.compare(".MID") != 0 &&
+		file_type.compare(".WAV") != 0 &&*/
+		file_type.compare(".MP3") != 0) {
 		string str;
 		str.append("Can not load audio file ").append(lpzFileName);
 		GAME_ASSERT(false, str.append(": file type is not supported!").c_str());

@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0C43EAC26E4B4D8DBC78F00342FC2730"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1540FE9C6B314C288322AF99DA86F4DD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -87,6 +93,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_667C00909BCF47E0A34D497DEC0B77AB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_788BD8FF1C1A479F843028E247DCDF28"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -100,12 +112,6 @@
         "Entry"
         {
         "MsmKey" = "8:_81258A72110E4147BA4A5B52DD85752E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_85D08B3CAE5F47B490C75FB005DD0375"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -228,7 +234,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Setup\\Release\\Setup.msi"
+        "OutputFilename" = "8:Setup\\Release\\MetalSlug.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -270,6 +276,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0C43EAC26E4B4D8DBC78F00342FC2730"
+            {
+            "SourcePath" = "8:Sounds\\bgm.mp3"
+            "TargetName" = "8:bgm.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_2D4D0FE8FDA34E8AB4A55CF78E6C8A47"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1540FE9C6B314C288322AF99DA86F4DD"
             {
             "SourcePath" = "8:Sounds\\ding.wav"
@@ -510,6 +536,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_667C00909BCF47E0A34D497DEC0B77AB"
+            {
+            "SourcePath" = "8:RES\\GAME.ICO"
+            "TargetName" = "8:GAME.ICO"
+            "Tag" = "8:"
+            "Folder" = "8:_A62E3FBC3C2C4A6D9157A8D6CE468FB2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_788BD8FF1C1A479F843028E247DCDF28"
             {
             "SourcePath" = "8:Bitmaps\\leg_right2.bmp"
@@ -556,26 +602,6 @@
             "TargetName" = "8:leg_right4.bmp"
             "Tag" = "8:"
             "Folder" = "8:_EA4AD5C33B81477D82013D9D4380FE5B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85D08B3CAE5F47B490C75FB005DD0375"
-            {
-            "SourcePath" = "8:RES\\GAME.ICO"
-            "TargetName" = "8:GAME.ICO"
-            "Tag" = "8:"
-            "Folder" = "8:_A62E3FBC3C2C4A6D9157A8D6CE468FB2"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -865,17 +891,6 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_103653F85A91438BA0DA3740C03B1818"
-                    {
-                    "Name" = "8:Game Framework 4.6"
-                    "AlwaysCreate" = "11:TRUE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_C0D2E59AEBC14502B5851BE9EB4B7892"
-                        "Folders"
-                        {
-                        }
-                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_263424447AE240638E81B6849387B631"
                     {
                     "Name" = "8:2019 games"
@@ -950,9 +965,9 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:2019 games"
-        "ProductCode" = "8:{C7AE0737-99D3-44CB-AB45-A65365E1279F}"
-        "PackageCode" = "8:{4C26F049-1D6D-46FD-82B2-BF53F59EF65E}"
-        "UpgradeCode" = "8:{4EA7D5B2-F9EC-484C-9673-B7A28784ABFC}"
+        "ProductCode" = "8:{9A3C1FFA-1C72-4C38-9778-8D35EF8EAD10}"
+        "PackageCode" = "8:{772C7C8A-97C6-4FBE-AAF1-170DD28BB69E}"
+        "UpgradeCode" = "8:{DBFAA27C-42CD-498D-B010-C01616BFC159}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -962,7 +977,7 @@
         "Manufacturer" = "8:NUTU-CSIE-2019Games"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Game Framework Sample Program 4.6"
+        "Title" = "8:2019 names"
         "Subject" = "8:Game Framework"
         "ARPCONTACT" = "8:YO"
         "Keywords" = "8:MFC, DirectX, Game, Framework"
@@ -1071,23 +1086,9 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4537360510BB41BA82E7D1774689A614"
-            {
-            "Name" = "8:Sample Program"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_FEB1C521B758467A98F7B43033E60D12"
-            "Folder" = "8:_103653F85A91438BA0DA3740C03B1818"
-            "WorkingFolder" = "8:_A62E3FBC3C2C4A6D9157A8D6CE468FB2"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_87570A8ADE894B29A2298B958A0C7F96"
             {
-            "Name" = "8:Sample Program"
+            "Name" = "8:MetalSlug"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1096,12 +1097,12 @@
             "Target" = "8:_FEB1C521B758467A98F7B43033E60D12"
             "Folder" = "8:_F3D4BF2E41DE476B866785438B47DFAF"
             "WorkingFolder" = "8:_A62E3FBC3C2C4A6D9157A8D6CE468FB2"
-            "Icon" = "8:"
+            "Icon" = "8:_667C00909BCF47E0A34D497DEC0B77AB"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8ECA71B093064705B68D759EE9ECE423"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9D0B318267A14D11BD371D56F43592AA"
             {
-            "Name" = "8:Metal Slug"
+            "Name" = "8:MetalSlug"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1110,7 +1111,7 @@
             "Target" = "8:_FEB1C521B758467A98F7B43033E60D12"
             "Folder" = "8:_263424447AE240638E81B6849387B631"
             "WorkingFolder" = "8:_A62E3FBC3C2C4A6D9157A8D6CE468FB2"
-            "Icon" = "8:_85D08B3CAE5F47B490C75FB005DD0375"
+            "Icon" = "8:_667C00909BCF47E0A34D497DEC0B77AB"
             "Feature" = "8:"
             }
         }
