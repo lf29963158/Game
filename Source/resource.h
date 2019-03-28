@@ -1,0 +1,93 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ 產生的 Include 檔案。
+// 由 game.rc 使用
+//
+#define IDD_ABOUTBOX                    100
+#define IDP_SOCKETS_INIT_FAILED         104
+#define IDR_MAINFRAME                   128
+#define IDR_GAMETYPE                    129
+#define IDB_BALL                        130
+#define IDB_RACKET                      131
+#define IDB_ERASER1                     131
+#define IDB_BITMAP1                     132
+#define IDB_BACKGROUND                  132
+#define IDB_CORNER                      133
+#define IDB_BALL1                       134
+#define IDB_BALL2                       135
+#define IDB_BALL3                       136
+#define IDB_BALL4                       137
+#define IDB_0                           138
+#define IDB_1                           139
+#define IDB_2                           140
+#define IDB_3                           141
+#define IDB_4                           142
+#define IDB_5                           143
+#define IDB_6                           144
+#define IDB_7                           145
+#define IDB_8                           146
+#define IDB_9                           147
+#define IDB_MINUS                       148
+#define IDB_CENTER                      149
+#define IDB_ERASER2                     150
+#define IDB_ERASER3                     151
+#define IDB_CONTINUE                    152
+#define IDC_GAMECURSOR                  153
+#define IDB_HELP                        155
+#define IDB_BITMAP2                     156
+#define IDB_LOADING                     156
+#define IDB_BBGone1                     167
+#define IDB_BITMAP3                     168
+#define IDB_BBB                         168
+#define IDB_PNG1                        172
+#define IDB_BGone                       173
+#define IDB_ManRight1                   174
+#define IDB_ManLeft1                    175
+#define IDB_ManLeft2                    176
+#define IDB_ManLeft3                    177
+#define IDB_ManLeft4                    178
+#define IDB_ManRight2                   179
+#define IDB_ManRight3                   180
+#define IDB_ManRight4                   181
+#define IDB_LegLeft1                    192
+#define IDB_LegLeft2                    193
+#define IDB_LegLeft3                    194
+#define IDB_LegLeft4                    195
+#define IDB_LegLeft5                    196
+#define IDB_LegRight1                   197
+#define IDB_LegRight2                   198
+#define IDB_LegRight3                   199
+#define IDB_LegRight4                   200
+#define IDB_BITMAP9                     201
+#define IDB_LegRight5                   201
+#define IDB_PNG2                        202
+#define IDB_M1                          203
+#define IDB_M2                          204
+#define IDB_M3                          205
+#define IDB_M4                          206
+#define IDB_M5                          207
+#define IDB_M6                          208
+#define IDB_M7                          209
+#define IDB_M8                          210
+#define IDB_BITMAP12                    211
+#define IDB_M9                          211
+#define IDB_MAP1                        212
+#define IDB_BITMAP4                     213
+#define IDB_BULLET                      213
+#define IDC_README                      1001
+#define ID_FILE_PAUSE                   32771
+#define ID_TOGGLE_FULLSCREEN            32772
+#define ID_BUTTON_FULLSCREEN            32773
+#define ID_BUTTON_PAUSE                 32774
+#define ID_BUTTON_UNITTEST              32775
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        214
+#define _APS_NEXT_COMMAND_VALUE         32776
+#define _APS_NEXT_CONTROL_VALUE         1003
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
