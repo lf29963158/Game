@@ -104,8 +104,6 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-IDB_BGone               BITMAP                  "..\\Bitmaps\\mission1.bmp"
-
 IDB_ManRight1           BITMAP                  "..\\Bitmaps\\man_right.bmp"
 
 IDB_ManLeft1            BITMAP                  "..\\Bitmaps\\man_left.bmp"
@@ -142,27 +140,9 @@ IDB_LegRight4           BITMAP                  "..\\Bitmaps\\leg_right4.bmp"
 
 IDB_LegRight5           BITMAP                  "..\\Bitmaps\\leg_right5.bmp"
 
-IDB_M1                  BITMAP                  "..\\Bitmaps\\mission1_1.bmp"
+IDB_MAP1                BITMAP                  "..\\Bitmaps\\mission11.bmp"
 
-IDB_M2                  BITMAP                  "..\\Bitmaps\\mission1_2.bmp"
-
-IDB_M3                  BITMAP                  "..\\Bitmaps\\mission1_3.bmp"
-
-IDB_M4                  BITMAP                  "..\\Bitmaps\\mission1_4.bmp"
-
-IDB_M5                  BITMAP                  "..\\Bitmaps\\mission1_5.bmp"
-
-IDB_M6                  BITMAP                  "..\\Bitmaps\\mission1_6.bmp"
-
-IDB_M7                  BITMAP                  "..\\Bitmaps\\mission1_7.bmp"
-
-IDB_M8                  BITMAP                  "..\\Bitmaps\\mission1_8.bmp"
-
-IDB_M9                  BITMAP                  "..\\Bitmaps\\mission1_9.bmp"
-
-IDB_MAP1                BITMAP                  "C:\\Users\\Lion\\Desktop\\新增資料夾 (3)\\Bitmaps\\mission11.bmp"
-
-IDB_BULLET              BITMAP                  "C:\\Users\\Lion\\Desktop\\新增資料夾 (3)\\Bitmaps\\bullet.bmp"
+IDB_BULLET              BITMAP                  "..\\Bitmaps\\bullet.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
