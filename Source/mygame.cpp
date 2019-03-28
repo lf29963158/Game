@@ -235,20 +235,6 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
 	//
-	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
-	//
-	// 移動背景圖的座標
-	//
-	/*if (background.Top() > SIZE_Y)
-		background.SetTopLeft(60 ,-background.Height());
-	background.SetTopLeft(background.Left(),background.Top()+1);*/
-	//
-	// 移動球
-	//
-	/*int i;
-	for (i=0; i < NUMBALLS; i++)
-		ball[i].OnMove();*/
-	//
 	// 移動擦子
 	//
 	TRACE("character %d %d\n", eraser.GetX1(), eraser.GetY1());
@@ -277,11 +263,9 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 			if (x > gamemap.MissionOne.Left()+ 50)
 			{
 				//Missionone.Scrollingmap(x - 45);
-				gamemap.MissionOne.Scrollingmap(x - 45);
+				gamemap.MissionOne.Scrollingmap(x - 40);
 			}
 		}
-		//else
-		//if (x > 50)
 	}
 	if (eraser.isMovingRight && (!eraser.isMovingLeft))
 	{
@@ -290,7 +274,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 		{
 			eraser.SetXY(500 - eraser.GetX2() + eraser.GetX1(), eraser.GetY1());
 			//Missionone.Scrollingmap(x - 405);
-			gamemap.MissionOne.Scrollingmap(x - 405);
+			gamemap.MissionOne.Scrollingmap(x - 425);
 		}
 	}
 	if (eraser.isMovingDown)
@@ -301,20 +285,6 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 		}
 	}
 	eraser.OnMove();
-	/*if (eraser.GetX1() > 280) {
-		Missionone.SetTopLeft(-(eraser.GetX1() - 280), 0);
-		Missionone.ShowBitmap();
-		eraser.OnShow();
-	}*/
-	/*if(eraser.GetX1()<50)
-		eraser.SetXY(50, eraser.GetY1());
-	if (eraser.GetX2() > 600)
-		eraser.SetXY(600-eraser.GetX2()+eraser.GetX1(),eraser.GetY1());
-	if (eraser.isMovingLeft)
-		x -= 5;
-	if (eraser.isMovingRight)
-		x += 5;*/
-
 	//
 	// 判斷擦子是否碰到球
 	//
@@ -360,7 +330,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	// 完成部分Loading動作，提高進度
 	//
 	ShowInitProgress(50);
-	Sleep(300); // 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
+	//Sleep(300); // 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
 	//
 	// 繼續載入其他資料
 	//
@@ -507,11 +477,6 @@ CGameMap::CGameMap() :X(0), Y(0), MW(20), MH(20)
 		for (int j = 0; j < 200; j++)
 			map[i][j] = map_init[i][j];
 	}
-	/*for (int i = 19; i < 24; i++)
-	{
-		for (int j = 0; j < 200; j++)
-			map[i][j] = 1;
-	}*/
 }
 
 /*bool CGameMap::IsEmpty(int x, int y,int mapX)
@@ -535,15 +500,6 @@ int CGameMap::GetY()
 void CGameMap::LoadBitmap()
 {
 	MissionOne.LoadBitmap(IDB_MAP1);
-	/*MissionOne_1.LoadBitmap(IDB_M1);
-	MissionOne_2.LoadBitmap(IDB_M2);
-	MissionOne_3.LoadBitmap(IDB_M3);
-	MissionOne_4.LoadBitmap(IDB_M4);
-	MissionOne_5.LoadBitmap(IDB_M5);
-	MissionOne_6.LoadBitmap(IDB_M6);
-	MissionOne_7.LoadBitmap(IDB_M7);
-	MissionOne_8.LoadBitmap(IDB_M8);
-	MissionOne_9.LoadBitmap(IDB_M9);*/
 }
 
 void CGameMap::OnShow()
@@ -552,11 +508,4 @@ void CGameMap::OnShow()
 	MissionOne.ShowBitmap();
 }
 
-/*void CGameStateRun::MovingMap()
-{
-	if (eraser.GetX1() > 280) {
-		Missionone.Scollingmap(eraser.GetX1() > 280);
-		eraser.OnShow();
-	}
-}*/
 }

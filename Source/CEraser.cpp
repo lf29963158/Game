@@ -83,13 +83,6 @@ namespace game_framework {
 		}
 		
 		if (isMovingUp) {
-			//y -= STEP_SIZE;
-			/*for (int i = 0; i <= 3; i++) {
-				y = y - (int(sin(i) * 10) + STEP_SIZE);
-			}
-			for (int i = 3; i >= 0; i--) {
-				y = y + (int(sin(i) * 10) + STEP_SIZE);
-			}*/
 			if (canJump)
 			{
 				jumpState = true;

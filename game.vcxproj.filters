@@ -177,47 +177,10 @@
     <Image Include="res\bitmap3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Bitmaps\mission1-1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\bitmap5.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Bitmaps\mission1-1BIG.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Bitmaps\BBB.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1-10.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1.png" />
-    <Image Include="Bitmaps\mission1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Bitmaps\man_right.bmp">
@@ -275,33 +238,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Bitmaps\mission1_1.png" />
-    <Image Include="Bitmaps\mission1_1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmaps\mission1_9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Bitmaps\mission11.bmp">
       <Filter>Resource Files</Filter>
     </Image>
