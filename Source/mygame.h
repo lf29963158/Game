@@ -40,7 +40,7 @@
 #ifndef MYGAME_H
 #define MYGAME_H
 
-#include "CEraser.h"
+#include "CHero.h"
 #include "CBall.h"
 #include "CBouncingBall.h"
 
@@ -119,11 +119,11 @@ namespace game_framework {
 		CMovingBitmap	help;		// 說明圖
 		CBall			*ball;		// 球的陣列
 		CMovingBitmap	corner;		// 角落圖
-		CEraser			eraser;		// 拍子
+		CHero			hero;		// 拍子
 		CInteger		hits_left;	// 剩下的撞擊數
 		CBouncingBall   bball;		// 反覆彈跳的球
 		CGameMap		gamemap;
-		int x, y;
+		int x;					// 地圖左上角x座標
 		//CGameMap		gamemap;
 	};
 

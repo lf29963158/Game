@@ -4,7 +4,7 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "CEraser.h"
+#include "CHero.h"
 #include "CBall.h"
 
 namespace game_framework {
@@ -18,7 +18,7 @@ namespace game_framework {
 		x = y = dx = dy = index = delay_counter = 0;
 	}
 
-	bool CBall::HitEraser(CEraser *eraser)
+	bool CBall::HitEraser(CHero *eraser)
 	{
 		// 檢測擦子所構成的矩形是否碰到球
 		return HitRectangle(eraser->GetX1(), eraser->GetY1(),

@@ -1,5 +1,5 @@
-#ifndef CERASER_H
-#define CERASER_H
+#ifndef CHERO_H
+#define CHERO_H
 
 
 namespace game_framework {
@@ -8,14 +8,18 @@ namespace game_framework {
 	// 看懂就可以改寫成自己的程式了
 	/////////////////////////////////////////////////////////////////////////////
 	class CGameMap;
-	class CEraser
+	class CHero
 	{
 	public:
-		CEraser();
+		CHero();
 		int  GetX1();					// 擦子左上角 x 座標
 		int  GetY1();					// 擦子左上角 y 座標
 		int  GetX2();					// 擦子右下角 x 座標
 		int  GetY2();					// 擦子右下角 y 座標
+		bool GetIsMovingUp();
+		bool GetIsMovingDown();
+		bool GetIsMovingLeft();
+		bool GetIsMovingRight();
 		void Initialize();				// 設定擦子為初始值
 		void LoadBitmap();				// 載入圖形
 		void OnMove();					// 移動擦子
@@ -26,24 +30,33 @@ namespace game_framework {
 		void SetMovingUp(bool flag);	// 設定是否正在往上移動
 		void SetShot(bool flag);
 		void SetXY(int nx, int ny);		// 設定擦子左上角座標
-		bool isTouchRoad(CGameMap &map, int MAPX);
-		bool isTouchWall(CGameMap &map, int MAPX);
-		bool isMovingDown;			// 是否正在往下移動
-		bool isMovingLeft;			// 是否正在往左移動
-		bool isMovingRight;			// 是否正在往右移動
-		bool isMovingUp;			// 是否正在往上移動
+		void SetX(int nx);
+		void SetY(int ny);
+		bool isTouchRoad(CGameMap &map, int HEROX);
+		bool isTouchLeftWall(CGameMap &map, int HEROX);
+		bool isTouchRightWall(CGameMap &map, int HEROX);
+		//---test
+		bool rising = false;
+		//---
 		bool jumpState = false;		//人物跳躍(預設false)
 		bool canJump = false;
 		int cTa = 10;				//跳躍計算用
 		int flytime = 0;
+		int velocity;
+		int initial_velocity;
 	protected:
 		//CAnimation animation;		// 擦子的動畫
+		bool isMovingDown;			// 是否正在往下移動
+		bool isMovingLeft;			// 是否正在往左移動
+		bool isMovingRight;			// 是否正在往右移動
+		bool isMovingUp;			// 是否正在往上移動
 		bool workingState = true;	//人物向左(false)向右(true,預設)
 		bool attackState = false;
 		CAnimation working_left, working_right, leg_left, leg_right;		// 人物的動畫
 		CAnimation bullet;
 		int x, y;					// 擦子左上角座標
 		int *bulletX, *bulletY;
+		
 	};
 }
-#endif // !CERASER_H
+#endif // !CHERO_H
