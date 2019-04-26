@@ -5,7 +5,10 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "mygame.h"
+#include "CHealthPoints.h"
+#include "CEnemy.h"
 #include "CHero.h"
+#include "Bullet.h"
 #include <math.h>
 #define pi 0.017456
 namespace game_framework {
@@ -40,6 +43,11 @@ namespace game_framework {
 		return y + 70;
 	}
 
+	bool CHero::GetJumpState()
+	{
+		return jumpState;
+	}
+
 	void CHero::Initialize()
 	{
 		const int X_POS = 150;
@@ -48,8 +56,12 @@ namespace game_framework {
 		velocity = initial_velocity;
 		x = X_POS;
 		y = Y_POS;
-		bulletY = NULL;
-		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
+		blood = 100;
+		hurt = 16;
+		cTa = 10;
+		flytime = 0;
+		HP = new CHealthPoints;
+		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = isHurt = false;
 	}
 
 	void CHero::LoadBitmap()
@@ -68,7 +80,10 @@ namespace game_framework {
 		leg_left.AddBitmap(IDB_LegLeft3, RGB(255, 255, 255));
 		leg_left.AddBitmap(IDB_LegLeft4, RGB(255, 255, 255));
 		leg_left.AddBitmap(IDB_LegLeft5, RGB(255, 255, 255));
-		bullet.AddBitmap(IDB_BULLET,RGB(255,255,255));
+		working_left.SetDelayCount(2);
+		working_right.SetDelayCount(2);
+		leg_left.SetDelayCount(2);
+		leg_right.SetDelayCount(2);
 	}
 	void CHero::OnMove()
 	{
@@ -96,8 +111,37 @@ namespace game_framework {
 			}
 		}
 
-		/*else if (isMovingDown)
-			y += STEP_SIZE;*/
+		if (attackState) {
+			if (start == 0) {
+				start = clock();
+			}
+		}
+
+	}
+
+	void CHero::SetAttack(bool flag)
+	{
+		attackState = flag;
+	}
+
+	void CHero::SetOriginVelocity()
+	{
+		velocity = initial_velocity;
+	}
+
+	void CHero::SetVelocity(int num)
+	{
+		velocity += num;
+	}
+
+	int  CHero::GetVelocity()
+	{
+		return velocity;
+	}
+
+	void CHero::SetIsHurt(bool flag)
+	{
+		isHurt = flag;
 	}
 
 	void CHero::SetMovingDown(bool flag)
@@ -121,7 +165,6 @@ namespace game_framework {
 		if (canJump)
 		{
 			jumpState = true;
-			rising = true;
 			canJump = false;
 		}
 	}
@@ -129,6 +172,11 @@ namespace game_framework {
 	bool CHero::GetIsMovingUp()
 	{
 		return isMovingUp;
+	}
+
+	void CHero::SetJumpState(bool flag)
+	{
+		canJump = flag;
 	}
 
 	bool CHero::GetIsMovingDown()
@@ -146,15 +194,6 @@ namespace game_framework {
 		return isMovingRight;
 	}
 
-	void CHero::SetShot(bool flag)
-	{
-		attackState = flag;
-		bulletX = new int;
-		bulletY = new int;
-		*bulletX = x;
-		*bulletY = y;
-	}
-
 	void CHero::SetXY(int nx, int ny)
 	{
 		x = nx; y = ny;
@@ -168,6 +207,56 @@ namespace game_framework {
 	void CHero::SetY(int ny)
 	{
 		y = ny;
+	}
+
+	void CHero::isAttackEnemy(int mapX, CEnemy &enemy)
+	{
+		int bulletx;
+		for (unsigned int i = 0; i < _bullet.size(); i++)
+		{
+			bulletx =_bullet[i]->GetX();
+			TRACE("eeen %d %d , en %d %d %d %d\n", bulletx, _bullet[i]->GetY(), enemy.GetX1(), enemy.GetX2(), enemy.GetY1(), enemy.GetY2());
+			if (bulletx > enemy.GetX1() - 10 && bulletx < enemy.GetX2() && _bullet[i]->GetY() <= enemy.GetY2() && _bullet[i]->GetY() >= enemy.GetY1())
+			{
+				enemy.SetDeath(true);
+				Bullet* temp;
+				temp = _bullet[i];
+				_bullet.erase(_bullet.begin() + i);
+				delete temp;
+			}
+		}
+	}
+
+	void CHero::AddBullet()
+	{
+		Bullet* temp = new Bullet;
+		temp->SetXY(GetX1(), GetY1());
+		temp->SetDirection(workingState);
+		_bullet.push_back(temp);
+		TRACE("%d\n", _bullet.size());
+	}
+
+	void CHero::SetBullet()
+	{
+		for (unsigned int i = 0; i < _bullet.size(); i++)
+		{
+			if (!(_bullet[i]->GetFlytime() >= 300)) {
+				_bullet[i]->AddFlytime();
+				if (_bullet[i]->GetDirection()) {
+					_bullet[i]->SetXY(_bullet[i]->GetX() + 10, _bullet[i]->GetY());
+				}
+				else {
+					_bullet[i]->SetXY(_bullet[i]->GetX() - 10, _bullet[i]->GetY());
+				}
+				_bullet[i]->OnShow();
+			}
+			else {
+				Bullet* temp;
+				temp = _bullet[i];
+				_bullet.erase(_bullet.begin());
+				delete temp;
+			}
+		}
 	}
 
 	bool CHero::isTouchRoad(CGameMap &map, int HEROX)
@@ -196,7 +285,13 @@ namespace game_framework {
 
 	void CHero::OnShow()
 	{
-		if (workingState) {
+		if (isHurt && blood > 10)
+		{
+			blood -= hurt;
+			isHurt = false;
+		}
+		//HP->ShowHP(x, y, blood);
+		if (workingState) { //hero direction left
 			leg_right.SetTopLeft(x+11, y + 53);
 			working_right.SetTopLeft(x, y);
 			leg_right.OnShow();
@@ -209,31 +304,15 @@ namespace game_framework {
 			working_left.OnShow();
 		}
 		
-		if (attackState)
-		{
-			
-			flytime += 10;
-			if (workingState)
-			{
-				bullet.SetTopLeft(*bulletX + 33 + flytime, *bulletY + 33);
-				bullet.OnShow();
-			}
-			else
-			{
-				bullet.SetTopLeft(*bulletX + 33 - flytime, *bulletY + 33);
-				bullet.OnShow();
-			}
-			if (flytime >= 250)
-			{
-				attackState = false;
-				delete bulletX;
-				delete bulletY;
-				bulletX = NULL;
-				bulletY = NULL;
-				flytime = 0;
-			}
+		if (attackState && finish - start >= 100) {
+			start = 0;
+			finish = 0;
+			AddBullet();
+			attackState = false;
 		}
-		
+		else {
+			finish = clock();
+		}
+		SetBullet();	
 	}
-
 }

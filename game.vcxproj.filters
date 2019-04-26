@@ -129,6 +129,15 @@
     <ClCompile Include="Source\CHero.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Bullet.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CEnemy.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CHealthPoints.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -165,6 +174,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CHero.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bullet.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CEnemy.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CHealthPoints.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -242,6 +260,81 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Bitmaps\bullet.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_run6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_death16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_attack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_attack2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_attack5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bitmaps\left_enemy_attack6.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

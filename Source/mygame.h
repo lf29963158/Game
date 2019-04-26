@@ -41,6 +41,7 @@
 #define MYGAME_H
 
 #include "CHero.h"
+#include "CEnemy.h"
 #include "CBall.h"
 #include "CBouncingBall.h"
 
@@ -84,6 +85,7 @@ namespace game_framework {
 		void LoadBitmap();
 		int GetX();
 		int GetY();
+		int TransMap(int pos);
 		void OnShow();
 		int map[24][200];
 		CMovingBitmap MissionOne;
@@ -108,7 +110,6 @@ namespace game_framework {
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
-		//void MovingMap();
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -120,9 +121,11 @@ namespace game_framework {
 		CBall			*ball;		// 球的陣列
 		CMovingBitmap	corner;		// 角落圖
 		CHero			hero;		// 拍子
+		CEnemy			enemy;
 		CInteger		hits_left;	// 剩下的撞擊數
 		CBouncingBall   bball;		// 反覆彈跳的球
 		CGameMap		gamemap;
+		clock_t start, finish;
 		int x;					// 地圖左上角x座標
 		//CGameMap		gamemap;
 	};

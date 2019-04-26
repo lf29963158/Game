@@ -218,6 +218,7 @@ void CGameStateRun::OnBeginState()
 		ball[i].SetIsAlive(true);
 	}
 	hero.Initialize();
+	enemy.Initialize();
 	gamemap.MissionOne.SetTopLeft(0, 0);
 	background.SetTopLeft(BACKGROUND_X,0);				// 設定背景的起始座標
 	help.SetTopLeft(0, SIZE_Y - help.Height());			// 設定說明圖的起始座標
@@ -244,49 +245,25 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 		hero.SetXY(hero.GetX1(), hero.GetY1() + 5);
 	}*/
 	
-	if (!(hero.isTouchRoad(gamemap, x)))
+	if (!(hero.isTouchRoad(gamemap, x)))		//jump and touch road judge
 	{
 		int tempY = hero.GetY1();
-		if(!(hero.jumpState)) hero.SetXY(hero.GetX1(), hero.GetY1() + hero.velocity);
+		if(!(hero.GetJumpState())) hero.SetXY(hero.GetX1(), hero.GetY1() + hero.GetVelocity());
 		if (hero.isTouchRoad(gamemap, x))
 		{
 			tempY = tempY / 20 + 1;
 			hero.SetXY(hero.GetX1(), tempY * 20);
 		}
-		if (hero.velocity < 20) hero.velocity++;
+		if (hero.GetVelocity() < 20) hero.SetVelocity(hero.GetVelocity() + 1);
 	}
 	else
 	{
 		
-		hero.velocity = hero.initial_velocity;
-		hero.canJump = true;
+		hero.SetOriginVelocity();
+		hero.SetJumpState(true);
 	}
-	
-	/*if (hero.rising) {			// 上升狀態
-		if (hero.velocity > 0) {
-			hero.SetY(hero.GetY1() - hero.velocity);	// 當速度 > 0時，y軸上升(移動velocity個點，velocity的單位為 點/次)
-			hero.velocity--;		// 受重力影響，下次的上升速度降低
-		}
-		else {
-			hero.rising = false; // 當速度 <= 0，上升終止，下次改為下降
-			hero.jumpState = false;
-			hero.velocity = 1;	// 下降的初速(velocity)為1
-		}
-	}
-	else {				// 下降狀態
-		if (!(hero.isTouchRoad(gamemap, x))) {  // 當y座標還沒碰到地板
-			hero.SetY(hero.GetY1() + hero.velocity);	// y軸下降(移動velocity個點，velocity的單位為 點/次)
-			hero.velocity++;		// 受重力影響，下次的下降速度增加
-			TRACE("YOOOOOO\n");
-		}
-		else {
-			int setY = (hero.GetY2() + 53) / 20 - 1;
-			hero.SetY( setY*20);  // 當y座標低於地板，更正為地板上
-			hero.jumpState = false;
-			hero.velocity = hero.initial_velocity; // 重設上升初始速度
-		}
-	}*/
-	if (hero.GetIsMovingLeft() && (!hero.GetIsMovingRight()))
+
+	if (hero.GetIsMovingLeft() && (!hero.GetIsMovingRight()))		//left
 	{
 		if (hero.isTouchLeftWall(gamemap, x))
 		{
@@ -300,15 +277,17 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 			}
 			if (hero.GetX1() <= 50)
 			{
+				
 				hero.SetXY(50, hero.GetY1());
 				if (x > gamemap.MissionOne.Left() + 50)
 				{
+					enemy.SetXY(enemy.GetX1() + 5, enemy.GetY1());
 					gamemap.MissionOne.SetTopLeft(-(x - 50),0);
 				}
 			}
 		}
 	}
-	if (hero.GetIsMovingRight() && (!hero.GetIsMovingLeft()))
+	if (hero.GetIsMovingRight() && (!hero.GetIsMovingLeft()))		//right
 	{
 		if (hero.isTouchRightWall(gamemap, x))
 		{
@@ -317,8 +296,10 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 		else
 		{
 			x += 5;
+
 			if (hero.GetX2() > 500)
 			{
+				enemy.SetXY(enemy.GetX1() - 5, enemy.GetY1());
 				hero.SetXY(hero.GetX1() - 5, hero.GetY1());
 				if (x < 3780)
 				{
@@ -331,14 +312,13 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 			}
 		}
 	}
-	/*if (hero.GetIsMovingDown())
-	{
-		if (hero.GetY2() >= 280)
-		{
-			hero.SetXY(hero.GetX1(), hero.GetY1() - 5);
-		}
-	}*/
+
+	enemy.IsHeroInRange(hero);
+	//enemy.IsAttackRange(hero);
+	//hero.isAttackEnemy(x, enemy);
 	hero.OnMove();
+	enemy.OnMove();
+	
 	//
 	// 判斷擦子是否碰到球
 	//
@@ -379,6 +359,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	for (i = 0; i < NUMBALLS; i++)	
 		ball[i].LoadBitmap();								// 載入第i個球的圖形
 	hero.LoadBitmap();
+	enemy.LoadBitmap();
 	background.LoadBitmap(IDB_BACKGROUND);					// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
@@ -408,7 +389,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
 	const char KEY_DOWN  = 0x28; // keyboard下箭頭
-	const char KEY_SPACE = 0x20;
+	const char KEY_Z = 0x5A;
 	const char KEY_ESC = 27;
 	if (nChar == KEY_LEFT)
 		hero.SetMovingLeft(true);
@@ -418,8 +399,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		hero.SetMovingUp(true);
 	if (nChar == KEY_DOWN)
 		hero.SetMovingDown(true);
-	if (nChar == KEY_SPACE)
-		hero.SetShot(true);
+	if (nChar == KEY_Z)
+		hero.SetAttack(true);
 	if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
 		PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// 關閉遊戲
 }
@@ -489,13 +470,13 @@ void CGameStateRun::OnShow()
 	//  貼上左上及右下角落的圖
 	//
 	gamemap.MissionOne.ShowBitmap();
-	//Missionone.ShowBitmap();
 	corner.SetTopLeft(0,0);
 	corner.ShowBitmap();
 	corner.SetTopLeft(SIZE_X-corner.Width(), SIZE_Y-corner.Height());
 	corner.ShowBitmap();
 	
 	hero.OnShow();
+	enemy.OnShow();
 }
 
 CGameMap::CGameMap() :X(0), Y(0), MW(20), MH(20)
@@ -550,6 +531,11 @@ int CGameMap::GetX()
 int CGameMap::GetY()
 {
 	return Y;
+}
+
+int CGameMap::TransMap(int pos)
+{
+	return pos / 20;
 }
 
 void CGameMap::LoadBitmap()
