@@ -9,6 +9,7 @@ namespace game_framework {
 	class CHealthPoints;
 	class CGameMap;
 	class CEnemy;
+	class CBoss;
 	class Bullet;
 	class CHero
 	{

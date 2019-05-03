@@ -154,45 +154,71 @@ IDB_ENEMY_LEFT5         BITMAP                  "..\\Bitmaps\\left_enemy5.bmp"
 
 IDB_ENEMY_LEFT6         BITMAP                  "..\\Bitmaps\\left_enemy6.bmp"
 
-IDB_ENEMY_RUN           BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run.bmp"
+IDB_ENEMY_RUN           BITMAP                  "..\\Bitmaps\\left_enemy_run.bmp"
 
-IDB_ENEMY_RUN2          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run2.bmp"
+IDB_ENEMY_RUN2          BITMAP                  "..\\Bitmaps\\left_enemy_run2.bmp"
 
-IDB_ENEMY_RUN3          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run3.bmp"
+IDB_ENEMY_RUN3          BITMAP                  "..\\Bitmaps\\left_enemy_run3.bmp"
 
-IDB_ENEMY_RUN4          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run4.bmp"
+IDB_ENEMY_RUN4          BITMAP                  "..\\Bitmaps\\left_enemy_run4.bmp"
 
-IDB_ENEMY_RUN5          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run5.bmp"
+IDB_ENEMY_RUN5          BITMAP                  "..\\Bitmaps\\left_enemy_run5.bmp"
 
-IDB_ENEMY_RUN6          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_run6.bmp"
+IDB_ENEMY_RUN6          BITMAP                  "..\\Bitmaps\\left_enemy_run6.bmp"
 
-IDB_ENEMY_DEATH         BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death.bmp"
+IDB_ENEMY_DEATH         BITMAP                  "..\\Bitmaps\\left_enemy_death.bmp"
 
-IDB_ENEMY_DEATH2        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death3.bmp"
+IDB_ENEMY_DEATH2        BITMAP                  "..\\Bitmaps\\left_enemy_death3.bmp"
 
-IDB_ENEMY_DEATH3        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death5.bmp"
+IDB_ENEMY_DEATH3        BITMAP                  "..\\Bitmaps\\left_enemy_death5.bmp"
 
-IDB_ENEMY_DEATH4        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death7.bmp"
+IDB_ENEMY_DEATH4        BITMAP                  "..\\Bitmaps\\left_enemy_death7.bmp"
 
-IDB_ENEMY_DEATH5        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death9.bmp"
+IDB_ENEMY_DEATH5        BITMAP                  "..\\Bitmaps\\left_enemy_death9.bmp"
 
-IDB_ENEMY_DEATH6        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death10.bmp"
+IDB_ENEMY_DEATH6        BITMAP                  "..\\Bitmaps\\left_enemy_death10.bmp"
 
-IDB_ENEMY_DEATH7        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death11.bmp"
+IDB_ENEMY_DEATH7        BITMAP                  "..\\Bitmaps\\left_enemy_death11.bmp"
 
-IDB_ENEMY_DEATH8        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death15.bmp"
+IDB_ENEMY_DEATH8        BITMAP                  "..\\Bitmaps\\left_enemy_death15.bmp"
 
-IDB_ENEMY_DEATH9        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_death16.bmp"
+IDB_ENEMY_DEATH9        BITMAP                  "..\\Bitmaps\\left_enemy_death16.bmp"
 
-IDB_ENEMY_ATTACK        BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_attack.bmp"
+IDB_ENEMY_ATTACK        BITMAP                  "..\\Bitmaps\\left_enemy_attack.bmp"
 
-IDB_ENEMY_ATTACK2       BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_attack2.bmp"
+IDB_ENEMY_ATTACK2       BITMAP                  "..\\Bitmaps\\left_enemy_attack2.bmp"
 
-IDB_ENEMY_ATTACK3       BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_attack5.bmp"
+IDB_ENEMY_ATTACK3       BITMAP                  "..\\Bitmaps\\left_enemy_attack5.bmp"
 
-IDB_ENEMY_ATTACK4       BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy_attack6.bmp"
+IDB_ENEMY_ATTACK4       BITMAP                  "..\\Bitmaps\\left_enemy_attack6.bmp"
 
-IDB_ENEMY_LEFT          BITMAP                  "C:\\Users\\Lion\\Desktop\\sourceTree\\Bitmaps\\left_enemy.bmp"
+IDB_ENEMY_LEFT          BITMAP                  "..\\Bitmaps\\left_enemy.bmp"
+
+IDB_Boss_Left           BITMAP                  "..\\Bitmaps\\boss_left.bmp"
+
+IDB_Boss_Left2          BITMAP                  "..\\Bitmaps\\boss_left2.bmp"
+
+IDB_Boss_Left3          BITMAP                  "..\\Bitmaps\\boss_left3.bmp"
+
+IDB_Boss_Left4          BITMAP                  "..\\Bitmaps\\boss_left4.bmp"
+
+IDB_Boss_Left5          BITMAP                  "..\\Bitmaps\\boss_left5.bmp"
+
+IDB_Boss_Left6          BITMAP                  "..\\Bitmaps\\boss_left6.bmp"
+
+IDB_Boss_Left7          BITMAP                  "..\\Bitmaps\\boss_left7.bmp"
+
+IDB_Boss_Left8          BITMAP                  "..\\Bitmaps\\boss_left8.bmp"
+
+IDB_Boss_Left9          BITMAP                  "..\\Bitmaps\\boss_left9.bmp"
+
+IDB_Boss_Left10         BITMAP                  "..\\Bitmaps\\boss_left10.bmp"
+
+IDB_Boss_Left11         BITMAP                  "..\\Bitmaps\\boss_left11.bmp"
+
+IDB_Boss_Left12         BITMAP                  "..\\Bitmaps\\boss_left12.bmp"
+
+IDB_Boss_Light          BITMAP                  "D:\\NTUT\\¤j¤G\\OOPgame\\Game\\Bitmaps\\boss_light.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

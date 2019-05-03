@@ -218,7 +218,8 @@ void CGameStateRun::OnBeginState()
 		ball[i].SetIsAlive(true);
 	}
 	hero.Initialize();
-	enemy.Initialize();
+	//enemy.Initialize();
+	boss.Initialize();
 	gamemap.MissionOne.SetTopLeft(0, 0);
 	background.SetTopLeft(BACKGROUND_X,0);				// 設定背景的起始座標
 	help.SetTopLeft(0, SIZE_Y - help.Height());			// 設定說明圖的起始座標
@@ -314,10 +315,13 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	}
 
 	enemy.IsHeroInRange(hero);
-	//enemy.IsAttackRange(hero);
-	//hero.isAttackEnemy(x, enemy);
+	enemy.IsAttackRange(hero);
+	boss.IsHeroInRange(hero);
+	boss.IsAttackRange(hero);
+	hero.isAttackEnemy(x, enemy);
 	hero.OnMove();
 	enemy.OnMove();
+	boss.OnMove();
 	
 	//
 	// 判斷擦子是否碰到球
@@ -360,6 +364,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		ball[i].LoadBitmap();								// 載入第i個球的圖形
 	hero.LoadBitmap();
 	enemy.LoadBitmap();
+	boss.LoadBitmap();
 	background.LoadBitmap(IDB_BACKGROUND);					// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
@@ -477,6 +482,7 @@ void CGameStateRun::OnShow()
 	
 	hero.OnShow();
 	enemy.OnShow();
+	boss.OnShow();
 }
 
 CGameMap::CGameMap() :X(0), Y(0), MW(20), MH(20)

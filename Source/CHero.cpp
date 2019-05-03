@@ -7,6 +7,7 @@
 #include "mygame.h"
 #include "CHealthPoints.h"
 #include "CEnemy.h"
+#include "CBoss.h"
 #include "CHero.h"
 #include "Bullet.h"
 #include <math.h>
