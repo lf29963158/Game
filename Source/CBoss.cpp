@@ -40,7 +40,7 @@ namespace game_framework {
 
 	void CBoss::Initialize()
 	{
-		const int X_POS = 300;
+		const int X_POS = 350;
 		const int Y_POS = 130;
 		x = X_POS;
 		y = Y_POS;
@@ -73,22 +73,19 @@ namespace game_framework {
 
 	void CBoss::IsHeroInRange(CHero &hero)
 	{
-		if ((GetX1() - hero.GetX1() < 100) && (GetX1() > hero.GetX1() + 40))
+		if (((GetX1()+GetX2())/2 - hero.GetX1() <= 200) )
 		{
-			isSeeHero = true;
+			SetAttack(true);
 		}
-		else
+		/*else
 		{
-			isSeeHero = false;
-			if ((GetX1() - hero.GetX1() <= 100) && GetX1() > hero.GetX1())
-			{
-				SetAttack(true);
-			}
-			else
-			{
-				SetAttack(false);
-				ResetAttack();
-			}
+			SetAttack(false);
+			ResetAttack();
+		}*/
+		if (boss_attack.IsFinalBitmap())
+		{
+			SetAttack(false);
+			ResetAttack();
 		}
 	}
 
@@ -99,7 +96,8 @@ namespace game_framework {
 
 	void CBoss::SetAttack(bool flag)
 	{
-		isAttack = flag && !isCD;
+		//isAttack = flag && !isCD;
+		isAttack = flag;
 	}
 
 	void CBoss::ResetAttack()
@@ -207,7 +205,6 @@ namespace game_framework {
 			{
 				boss_attack.SetTopLeft(x, y);
 				boss_attack.OnShow();
-				
 			}
 			else
 			{
