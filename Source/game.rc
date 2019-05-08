@@ -220,6 +220,8 @@ IDB_Boss_Left12         BITMAP                  "..\\Bitmaps\\boss_left12.bmp"
 
 IDB_Boss_Light          BITMAP                  "D:\\NTUT\\大二\\OOPgame\\Game\\Bitmaps\\boss_light.bmp"
 
+IDB_GameBegin           BITMAP                  "D:\\NTUT\\大二\\OOPgame\\Game\\RES\\gameBegin.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

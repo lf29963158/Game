@@ -396,6 +396,7 @@
     <Image Include="Bitmaps\mission1_1.png" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="res\bitmap5.bmp" />
+    <Image Include="RES\gameBegin.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

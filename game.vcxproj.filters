@@ -388,5 +388,8 @@
     <Image Include="Bitmaps\boss_light.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\gameBegin.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

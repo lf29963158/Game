@@ -80,7 +80,7 @@ void CGameStateInit::OnInit()
 	//
 	// 開始載入資料
 	//
-	logo.LoadBitmap(IDB_BACKGROUND);
+	logo.LoadBitmap(IDB_GameBegin);
 	Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
@@ -227,7 +227,7 @@ void CGameStateRun::OnBeginState()
 	hits_left.SetTopLeft(HITS_LEFT_X,HITS_LEFT_Y);		// 指定剩下撞擊數的座標
 	//CAudio::Instance()->Play(AUDIO_LAKE, true);			// 撥放 WAVE
 	//CAudio::Instance()->Play(AUDIO_DING, false);		// 撥放 WAVE
-	//CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
+	CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -365,7 +365,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	hero.LoadBitmap();
 	enemy.LoadBitmap();
 	boss.LoadBitmap();
-	background.LoadBitmap(IDB_BACKGROUND);					// 載入背景的圖形
+	background.LoadBitmap(IDB_GameBegin);					// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
 	//
