@@ -123,7 +123,7 @@ void CGameStateInit::OnShow()
 	pDC->SetBkColor(RGB(0,0,0));
 	pDC->SetTextColor(RGB(255,255,0));
 	pDC->TextOut(120,220,"Please click mouse or press SPACE to begin.");
-	pDC->TextOut(5,395,"Press Ctrl-F to switch in between window mode and full screen mode.");
+	pDC->TextOut(5,395,"Press Ctrl-F to window mode or full screen mode.");
 	if (ENABLE_GAME_PAUSE)
 		pDC->TextOut(5,425,"Press Ctrl-Q to pause the Game.");
 	pDC->TextOut(5,455,"Press Alt-F4 or ESC to Quit.");
