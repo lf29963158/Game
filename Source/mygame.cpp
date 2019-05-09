@@ -111,7 +111,7 @@ void CGameStateInit::OnShow()
 	//
 	// 貼上logo
 	//
-	logo.SetTopLeft((SIZE_X - logo.Width())/2, SIZE_Y/8);
+	logo.SetTopLeft(-30,0);
 	logo.ShowBitmap();
 	//
 	// Demo螢幕字型的使用，不過開發時請盡量避免直接使用字型，改用CMovingBitmap比較好
@@ -365,7 +365,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	hero.LoadBitmap();
 	enemy.LoadBitmap();
 	boss.LoadBitmap();
-	background.LoadBitmap(IDB_GameBegin);					// 載入背景的圖形
+	background.LoadBitmap(IDB_BACKGROUND);					// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
 	//
